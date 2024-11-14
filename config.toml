@@ -17,10 +17,15 @@ canonifyURLs = true
     author = "Bold Explorers"
     defaultKeywords = ["travel", "family", "adventure", "national parks"]
     defaultDescription = "Family adventure travel guides and experiences"
+    date_format = "July 19, 2011"
+    carousel_enable = true
+    js = ["jquery","bootstrap","owl.carousel","front"]
 
-    # Características del tema Universal
-    [params.carousel]
+    [params.CarouselHomepage]
         enable = true
+        auto_play = true
+        slide_speed = 2000
+        pagination_speed = 1000
         
     [params.features]
         enable = true

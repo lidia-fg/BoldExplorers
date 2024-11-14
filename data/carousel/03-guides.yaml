@@ -1,0 +1,28 @@
+# data/carousel/03-guides.yaml  
+weight: 3
+title: "Travel Guides"
+description: >
+ <div class="row">
+   <div class="col-sm-12">
+     <p>Detailed Itineraries • Local Tips • Hidden Gems</p>
+   </div>
+ </div>
+image: "/img/guides-background.jpg"
+en:
+ title: "Travel Guides"
+ description: >
+   <div class="row">
+     <div class="col-sm-12">
+       <p>Detailed Itineraries • Local Tips • Hidden Gems</p>
+     </div>
+   </div>
+ href: "/en/guides/"
+es:
+ title: "Guías de Viaje"
+ description: >
+   <div class="row">
+     <div class="col-sm-12">
+       <p>Itinerarios Detallados • Consejos Locales • Lugares Secretos</p>
+     </div>
+   </div>
+ href: "/es/guias/"

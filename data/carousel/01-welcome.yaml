@@ -1,0 +1,21 @@
+# data/carousel/01-welcome.yaml
+weight: 1
+image: "/img/hero-background.jpg"
+en:
+  title: "Bold Explorers"
+  description: >
+    <div class="row">
+      <div class="col-sm-12">
+        <p>Adventure. Discovery. Experience.</p>
+      </div>
+    </div>
+  href: "/en/destinations/"
+es:
+  title: "Bold Explorers"
+  description: >
+    <div class="row">
+      <div class="col-sm-12">
+        <p>Aventura. Descubrimiento. Experiencia.</p>
+      </div>
+    </div>
+  href: "/es/destinos/"

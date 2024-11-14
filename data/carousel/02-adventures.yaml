@@ -1,0 +1,28 @@
+# data/carousel/02-adventures.yaml
+weight: 2
+title: "Adventure Awaits"
+description: >
+ <div class="row">
+   <div class="col-sm-12">
+     <p>National Parks • Cultural Experiences • Outdoor Activities</p>
+   </div>
+ </div>
+image: "/img/adventure-background.jpg"
+en:
+ title: "Adventure Awaits"
+ description: >
+   <div class="row">
+     <div class="col-sm-12">
+       <p>National Parks • Cultural Experiences • Outdoor Activities</p>
+     </div>
+   </div>
+ href: "/en/destinations/adventure/"
+es:
+ title: "La Aventura Te Espera"
+ description: >
+   <div class="row">
+     <div class="col-sm-12">
+       <p>Parques Nacionales • Experiencias Culturales • Actividades al Aire Libre</p>
+     </div>
+   </div>
+ href: "/es/destinos/aventura/"

@@ -1,0 +1,28 @@
+# data/carousel/04-explore.yaml
+weight: 4
+title: "Explore Your World"
+description: >
+ <div class="row">
+   <div class="col-sm-12">
+     <p>Authentic Experiences • Expert Guides • Family Destinations</p>
+   </div>
+ </div>
+image: "/img/explore-background.jpg"
+en:
+ title: "Explore Your World"
+ description: >
+   <div class="row">
+     <div class="col-sm-12">
+       <p>Authentic Experiences • Expert Guides • Family Destinations</p>
+     </div>
+   </div>
+ href: "/en/destinations/"
+es:
+ title: "Explora Tu Mundo"
+ description: >
+   <div class="row">
+     <div class="col-sm-12">
+       <p>Experiencias Auténticas • Guías Expertos • Destinos Familiares</p>
+     </div>
+   </div>
+ href: "/es/destinos/"
