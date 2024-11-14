@@ -1,0 +1,23 @@
+# data/categories.yaml
+travel:
+  - national-parks
+  - cities
+  - beaches
+  - mountains
+  - historical
+  - cultural
+
+activities:
+  - hiking
+  - museums
+  - food
+  - adventure
+  - educational
+
+planning:
+  - flights
+  - accommodation
+  - packing
+  - homeschool
+  - budgeting
+  - insurance

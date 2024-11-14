@@ -1,0 +1,66 @@
+<div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="{{ .Site.BaseURL }}">
+                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }} logo">
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                    <li class="nav-item{{ if $currentPage.HasMenuCurrent "main" . }} active{{ end }}">
+                        <a href="{{ .URL | relLangURL }}" class="nav-link">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                    
+                    <!-- Selector de idioma -->
+                    {{ if .IsTranslated }}
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{ .Site.Language.LanguageName }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {{ range .Translations }}
+                            <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                    {{ else }}
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{ .Site.Language.LanguageName }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {{ $currentSection := .Section }}
+                            {{ range .Site.Languages }}
+                                {{ if ne . $.Site.Language }}
+                                    {{ $lang := .Lang }}
+                                    {{ $section := $currentSection }}
+                                    {{ if eq $currentSection "destinations" }}{{ $section = "destinos" }}
+                                    {{ else if eq $currentSection "destinos" }}{{ $section = "destinations" }}
+                                    {{ else if eq $currentSection "guides" }}{{ $section = "guias" }}
+                                    {{ else if eq $currentSection "guias" }}{{ $section = "guides" }}
+                                    {{ else if eq $currentSection "itineraries" }}{{ $section = "itinerarios" }}
+                                    {{ else if eq $currentSection "itinerarios" }}{{ $section = "itineraries" }}
+                                    {{ else if eq $currentSection "tips" }}{{ $section = "consejos" }}
+                                    {{ else if eq $currentSection "consejos" }}{{ $section = "tips" }}
+                                    {{ end }}
+                                    <li><a href="/{{ $lang }}/{{ $section }}">{{ .LanguageName }}</a></li>
+                                {{ end }}
+                            {{ end }}
+                        </ul>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
