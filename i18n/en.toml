@@ -1,0 +1,44 @@
+[readMore]
+other = "Read more"
+
+[contactForm]
+other = "Contact form"
+
+[contactGoTo]
+other = "Go to contact page"
+
+[contactMail]
+other = "Your Email"
+
+[contactMessage]
+other = "Your Message"
+
+[contactName]
+other = "Your Name"
+
+[contactSend]
+other = "Send Message"
+
+[contactSubject]
+other = "Subject"
+
+[recentPosts]
+other = "Recent Posts"
+
+[viewAllPosts]
+other = "View all posts"
+
+[heroTitle]
+other = "Explore Your World"
+
+[heroDescription]
+other = "Discover authentic travel experiences, expertly curated itineraries, and family-friendly adventures around the globe"
+
+[startExploring]
+other = "Start Exploring"
+
+[languageSelector]
+other = "Select language"
+
+[languageName]
+other = "English"
