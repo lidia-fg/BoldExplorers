@@ -1,85 +1,79 @@
 ---
-
 # URL y Metadatos Básicos
-title: "3 Días en Islandia con Niños: Círculo Dorado y Laguna Azul"  
-translationKey: "iceland-3-days" 
-slug: "3-dias-islandia-ninos-circulo-dorado"  
-date: 2024-03-14  
-lastmod: 2024-03-14  
-draft: false  
+title: "3 Días en Islandia con Niños: Círculo Dorado y Laguna Azul"
+translationKey: "iceland-3-days"
+date: 2024-03-14
+lastmod: 2024-03-14
+draft: false
+type: "blog"
 
-# SEO
-meta_title: "3 Días en Islandia con Niños: Itinerario Familiar Círculo Dorado"  
-meta_description: "Descubre el mejor itinerario familiar de 3 días en Islandia. Guía completa para explorar el Círculo Dorado, Laguna Azul y la costa sur con niños."  
+# Taxonomías Principales
+categories: ["blog"]
+continents: ["europa"]
+countries: ["islandia"]
+travel: ["aventura", "naturaleza", "ciudades"]
+activities: ["senderismo", "aguas-termales", "turismo"]
+seasons: ["verano"]
+difficulties: ["facil"]
+duration: "viaje-corto"
+budget: "medio"
+planning: ["vuelos", "alojamiento", "alquiler-coche"]
+
+# Información Geográfica
+destinations:
+  - name: "Reykjavik"
+    coordinates:
+      latitude: 64.1466
+      longitude: -21.9426
+  - name: "Círculo Dorado"
+    coordinates:
+      latitude: 64.3271
+      longitude: -20.1199
+  - name: "Laguna Azul"
+    coordinates:
+      latitude: 63.8804
+      longitude: -22.4495
+
+# SEO y Social
+meta_title: "3 Días en Islandia con Niños: Itinerario Familiar Círculo Dorado"
+meta_description: "Descubre el mejor itinerario familiar de 3 días en Islandia. Guía completa para explorar el Círculo Dorado, Laguna Azul y la costa sur con niños."
 keywords: ["Islandia con niños", "itinerario 3 días Islandia", "viaje familiar círculo dorado", "vacaciones en Islandia en familia", "laguna azul con niños"]
-
-# Schema.org
-schema:  
-  type: "Article"  
-  datePublished: "2024-03-14"  
-  dateModified: "2024-03-14"  
-  wordCount: "2500"  
-  author: "Exploradores Audaces"  
-  destination: "Islandia"  
-  tripDuration: "3 días"  
-
-# Ubicación
-continent: "Europa"  
-country: "Islandia"  
-destinations:  
-  - name: "Reykjavik"  
-    coordinates:  
-      lat: 64.1466  
-      long: -21.9426  
-  - name: "Círculo Dorado"  
-    coordinates:  
-      lat: 64.3271  
-      long: -20.1199  
-  - name: "Laguna Azul"  
-    coordinates:  
-      lat: 63.8804  
-      long: -22.4495  
-
-# Características
-travel_type: ["familiar", "viaje en auto"]  
-activities: ["turismo", "senderismo", "baños-termales"]  
-season: "verano"  
-best_time: ["junio", "julio", "agosto"]  
-duration: "3 días"  
-budget_category: "medio"  
-budget_range: "$2000-$3000"  
-
-# Taxonomías para filtrado
-categories: ["blog", "viaje-en-familia"]  
-travel: ["ciudades", "parques-nacionales"]  
-difficulty: "fácil-moderado"  
-age_range: ["todas las edades", "escolares"]  
-planning: ["transporte", "alojamiento", "actividades"]  
-
-# Etiquetas para búsqueda
-tags: [  
-  "Islandia con niños",  
-  "viaje en familia Islandia",  
-  "guía círculo dorado",  
-  "consejos laguna azul",  
-  "actividades familiares Reykjavik",  
-  "itinerario 3 días Islandia",  
-  "verano en Islandia"  
-]  
+tags: [
+  "Islandia con niños",
+  "viaje en familia Islandia",
+  "guía círculo dorado",
+  "consejos laguna azul",
+  "actividades familiares Reykjavik",
+  "itinerario 3 días Islandia",
+  "verano en Islandia"
+]
 
 # Imágenes
-featured_image: "/images/blog/iceland/featured/arco_iris_result.webp"  
-imageAlt: "Casas coloridas en Reykjavik con calle arco iris, Islandia"  
-gallery_folder: "/images/blog/iceland/content/"  
+featured_image: "/images/blog/iceland/featured/arco_iris_result.webp"
+image_alt: "Casas coloridas en Reykjavik con calle arco iris, Islandia"
+gallery_folder: "/images/blog/iceland/content/"
+
+# Datos Adicionales
+trip_cost: "$2000-$3000"
+best_months: ["junio", "julio", "agosto"]
+author: "Exploradores Audaces"
+
+# Schema.org
+schema:
+  type: "Article"
+  datePublished: "2024-03-14"
+  dateModified: "2024-03-14"
+  wordCount: "2500"
+  author: "Exploradores Audaces"
+  destination: "Islandia"
+  tripDuration: "3 días"
 
 # Social Sharing
-og_title: "3 Días en Islandia con Niños: Guía Completa para Familias"  
-og_description: "Planea el viaje familiar perfecto de 3 días a Islandia. Consejos para el Círculo Dorado, Laguna Azul y actividades para niños. Incluye mapas, costos y recomendaciones."  
-og_image: "/images/blog/iceland/featured/Reykjavik.jpg"  
-og_type: "article"  
-
---- 
-
+og_title: "3 Días en Islandia con Niños: Guía Completa para Familias"
+og_description: "Planea el viaje familiar perfecto de 3 días a Islandia. Consejos para el Círculo Dorado, Laguna Azul y actividades para niños. Incluye mapas, costos y recomendaciones."
+og_image: "/images/blog/iceland/featured/Reykjavik.jpg"
+og_type: "article"
+---
 
 
 

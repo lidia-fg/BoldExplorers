@@ -1,116 +1,284 @@
+# i18n/es.yaml
+# Traducciones existentes del tema
 - id: home
   translation: "Inicio"
-
 - id: templateBy
-  translation: "Plantilla creada por"
-
+  translation: "Plantilla por"
 - id: portedBy
-  translation: "Adaptada a Hugo por"
-
+  translation: "Adaptado a Hugo por"
 - id: contactGoTo
   translation: "Ir a la página de contacto"
-
 - id: contactAddrTitle
   translation: "Dirección"
-
 - id: contactTitle
   translation: "Contacto"
-
 - id: contactForm
   translation: "Formulario de contacto"
-
 - id: contactName
   translation: "Tu Nombre"
-
 - id: contactMail
   translation: "Tu Email"
-
 - id: contactMessage
   translation: "Tu Mensaje"
-
 - id: contactSend
-  translation: "Enviar mensaje"
-
+  translation: "Enviar Mensaje"
 - id: navHome
   translation: "ir a inicio"
-
 - id: navToggle
-  translation: "Cambiar Navegación"
-
+  translation: "Alternar Navegación"
 - id: categoriesTitle
-  translation: "Categorias"
-
+  translation: "Categorías"
 - id: searchTitle
   translation: "Buscar"
-
 - id: tagsTitle
-  translation: "Palabras clave"
-
+  translation: "Etiquetas"
 - id: continueReading
   translation: "Continuar leyendo"
-
 - id: readMore
   translation: "Leer más"
-
 - id: authorBy
   translation: "Por"
-
 - id: recentPosts
   translation: "Posts recientes"
-
 - id: aboutUs
   translation: "Sobre nosotros"
-
 - id: newer
-  translation: "Más reciente"
-
+  translation: "Más nuevo"
 - id: older
   translation: "Más antiguo"
-
 - id: publishedOn
   translation: "el"
-
 - id: 404Error
   translation: "Error 404: Página no encontrada"
-
 - id: 404Message
-  translation: "Lo sentimos – esta página ya no está aquí"
-
+  translation: "Lo sentimos – esta página ya no existe"
 - id: 404NavHome
-  translation: "Ir a la página de inicio"
-
+  translation: "Ir a inicio"
 - id: January
   translation: Enero
-
 - id: February
   translation: Febrero
-
 - id: March
   translation: Marzo
-
 - id: April
   translation: Abril
-
 - id: May
   translation: Mayo
-
 - id: June
   translation: Junio
-
 - id: July
   translation: Julio
-
 - id: August
   translation: Agosto
-
 - id: September
   translation: Septiembre
-
 - id: October
   translation: Octubre
-
 - id: November
   translation: Noviembre
-
 - id: December
   translation: Diciembre
+
+# Nuevas traducciones para taxonomías
+- id: taxonomies.categories
+  translation: "Categorías"
+- id: taxonomies.continents
+  translation: "Continentes"
+- id: taxonomies.countries
+  translation: "Países"
+- id: taxonomies.travel
+  translation: "Tipos de Viaje"
+- id: taxonomies.activities
+  translation: "Actividades"
+- id: taxonomies.seasons
+  translation: "Temporadas"
+- id: taxonomies.difficulties
+  translation: "Niveles de Dificultad"
+- id: taxonomies.planning
+  translation: "Planificación"
+- id: taxonomies.duration
+  translation: "Duración"
+- id: taxonomies.budget
+  translation: "Presupuesto"
+
+# Valores para taxonomías
+- id: taxonomy.categories.blog
+  translation: "Post del Blog"
+- id: taxonomy.categories.guide
+  translation: "Guía de Viaje"
+- id: taxonomy.categories.destination
+  translation: "Destino"
+- id: taxonomy.categories.itinerary
+  translation: "Itinerario"
+- id: taxonomy.categories.tip
+  translation: "Consejo de Viaje"
+
+- id: taxonomy.travel.adventure
+  translation: "Aventura"
+- id: taxonomy.travel.cultural
+  translation: "Cultural"
+- id: taxonomy.travel.nature
+  translation: "Naturaleza"
+- id: taxonomy.travel.cities
+  translation: "Ciudades"
+
+- id: taxonomy.difficulties.easy
+  translation: "Fácil"
+- id: taxonomy.difficulties.moderate
+  translation: "Moderado"
+- id: taxonomy.difficulties.challenging
+  translation: "Desafiante"
+
+- id: taxonomy.duration.weekend
+  translation: "Fin de Semana"
+- id: taxonomy.duration.short-trip
+  translation: "Viaje Corto"
+- id: taxonomy.duration.long-trip
+  translation: "Viaje Largo"
+
+- id: taxonomy.budget.budget
+  translation: "Económico"
+- id: taxonomy.budget.mid-range
+  translation: "Precio Medio"
+- id: taxonomy.budget.luxury
+  translation: "Lujo"
+
+  # Taxonomías principales
+- id: taxonomies.categories
+  translation: "Categorías"
+- id: taxonomies.continents
+  translation: "Continentes"
+- id: taxonomies.countries
+  translation: "Países"
+- id: taxonomies.travel
+  translation: "Tipos de Viaje"
+- id: taxonomies.activities
+  translation: "Actividades"
+- id: taxonomies.seasons
+  translation: "Temporadas"
+- id: taxonomies.difficulties
+  translation: "Niveles de Dificultad"
+- id: taxonomies.planning
+  translation: "Planificación"
+- id: taxonomies.duration
+  translation: "Duración"
+- id: taxonomies.budget
+  translation: "Presupuesto"
+
+# Categorías
+- id: taxonomy.categories.blog
+  translation: "Post del Blog"
+- id: taxonomy.categories.guide
+  translation: "Guía de Viaje"
+- id: taxonomy.categories.destination
+  translation: "Destino"
+- id: taxonomy.categories.itinerary
+  translation: "Itinerario"
+- id: taxonomy.categories.tip
+  translation: "Consejo de Viaje"
+
+# Continentes
+- id: taxonomy.continents.europe
+  translation: "Europa"
+- id: taxonomy.continents.north-america
+  translation: "América del Norte"
+- id: taxonomy.continents.south-america
+  translation: "América del Sur"
+- id: taxonomy.continents.asia
+  translation: "Asia"
+- id: taxonomy.continents.africa
+  translation: "África"
+- id: taxonomy.continents.oceania
+  translation: "Oceanía"
+
+# Tipos de Viaje
+- id: taxonomy.travel.adventure
+  translation: "Aventura"
+- id: taxonomy.travel.cultural
+  translation: "Cultural"
+- id: taxonomy.travel.nature
+  translation: "Naturaleza"
+- id: taxonomy.travel.cities
+  translation: "Ciudades"
+
+# Actividades
+- id: taxonomy.activities.hiking
+  translation: "Senderismo"
+- id: taxonomy.activities.museums
+  translation: "Museos"
+- id: taxonomy.activities.food
+  translation: "Gastronomía"
+- id: taxonomy.activities.parks
+  translation: "Parques"
+- id: taxonomy.activities.beach
+  translation: "Playa"
+- id: taxonomy.activities.hot-springs
+  translation: "Aguas Termales"
+- id: taxonomy.activities.wildlife
+  translation: "Vida Salvaje"
+
+# Temporadas
+- id: taxonomy.seasons.spring
+  translation: "Primavera"
+- id: taxonomy.seasons.summer
+  translation: "Verano"
+- id: taxonomy.seasons.fall
+  translation: "Otoño"
+- id: taxonomy.seasons.winter
+  translation: "Invierno"
+- id: taxonomy.seasons.all-year
+  translation: "Todo el Año"
+
+# Dificultad
+- id: taxonomy.difficulties.easy
+  translation: "Fácil"
+- id: taxonomy.difficulties.moderate
+  translation: "Moderado"
+- id: taxonomy.difficulties.challenging
+  translation: "Desafiante"
+
+# Duración
+- id: taxonomy.duration.weekend
+  translation: "Fin de Semana"
+- id: taxonomy.duration.short-trip
+  translation: "Viaje Corto"
+- id: taxonomy.duration.long-trip
+  translation: "Viaje Largo"
+
+# Presupuesto
+- id: taxonomy.budget.budget
+  translation: "Económico"
+- id: taxonomy.budget.mid-range
+  translation: "Precio Medio"
+- id: taxonomy.budget.luxury
+  translation: "Lujo"
+
+# Planificación
+- id: taxonomy.planning.flights
+  translation: "Vuelos"
+- id: taxonomy.planning.accommodation
+  translation: "Alojamiento"
+- id: taxonomy.planning.car-rental
+  translation: "Alquiler de Coche"
+- id: taxonomy.planning.public-transport
+  translation: "Transporte Público"
+- id: taxonomy.planning.packing
+  translation: "Equipaje"
+- id: taxonomy.planning.insurance
+  translation: "Seguro"
+
+# Campos geográficos
+- id: geography.coordinates
+  translation: "Coordenadas"
+- id: geography.latitude
+  translation: "Latitud"
+- id: geography.longitude
+  translation: "Longitud"
+- id: geography.altitude
+  translation: "Altitud"
+- id: geography.region
+  translation: "Región"
+- id: geography.country
+  translation: "País"
+- id: geography.timezone
+  translation: "Zona Horaria"

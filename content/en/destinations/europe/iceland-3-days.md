@@ -1,17 +1,63 @@
 
 ---
-# URL y Metadatos Básicos
-title: "3 Days in Iceland with Kids: Golden Circle & Blue Lagoon" # H1, incluye keyword principal
+# URL and Basic Metadata
+title: "3 Days in Iceland with Kids: Golden Circle and Blue Lagoon"
 translationKey: "iceland-3-days"
-slug: "3-days-iceland-kids-golden-circle" # URL optimizada
 date: 2024-03-14
 lastmod: 2024-03-14
 draft: false
+type: "blog"
 
-# SEO
-meta_title: "3 Days in Iceland with Kids: Perfect Golden Circle Itinerary" # 50-60 caracteres
-meta_description: "Discover the best family-friendly 3-day Iceland itinerary. Complete guide to Golden Circle, Blue Lagoon & South Coast with kids. Tips, costs & maps included." # 150-160 caracteres
-keywords: ["iceland with kids", "3 day iceland itinerary", "golden circle family", "iceland family vacation", "blue lagoon with children"]
+# Main Taxonomies
+categories: ["blog"]
+continents: ["europe"]
+countries: ["iceland"]
+travel: ["adventure", "nature", "cities"]
+activities: ["hiking", "hot-springs", "sightseeing"]
+seasons: ["summer"]
+difficulties: ["easy"]
+duration: "short-trip"
+budget: "mid-range"
+planning: ["flights", "accommodation", "car-rental"]
+
+# Geographic Information
+destinations:
+  - name: "Reykjavik"
+    coordinates:
+      latitude: 64.1466
+      longitude: -21.9426
+  - name: "Golden Circle"
+    coordinates:
+      latitude: 64.3271
+      longitude: -20.1199
+  - name: "Blue Lagoon"
+    coordinates:
+      latitude: 63.8804
+      longitude: -22.4495
+
+# SEO and Social
+meta_title: "3 Days in Iceland with Kids: Family Golden Circle Itinerary"
+meta_description: "Discover the best 3-day family itinerary in Iceland. Complete guide to exploring the Golden Circle, Blue Lagoon and South Coast with children."
+keywords: ["Iceland with kids", "3 day Iceland itinerary", "family golden circle trip", "Iceland family vacation", "blue lagoon with kids"]
+tags: [
+  "Iceland with kids",
+  "family trip Iceland",
+  "golden circle guide",
+  "blue lagoon tips",
+  "Reykjavik family activities",
+  "3 day Iceland itinerary",
+  "summer in Iceland"
+]
+
+# Images
+featured_image: "/images/blog/iceland/featured/arco_iris_result.webp"
+image_alt: "Colorful houses in Reykjavik with rainbow street, Iceland"
+gallery_folder: "/images/blog/iceland/content/"
+
+# Additional Data
+trip_cost: "$2000-$3000"
+best_months: ["June", "July", "August"]
+author: "Bold Explorers"
 
 # Schema.org
 schema:
@@ -23,61 +69,11 @@ schema:
   destination: "Iceland"
   tripDuration: "3 days"
 
-# Ubicación
-continent: "europe"
-country: "iceland"
-destinations:
-  - name: "Reykjavik"
-    coordinates: 
-      lat: 64.1466
-      long: -21.9426
-  - name: "Golden Circle"
-    coordinates:
-      lat: 64.3271
-      long: -20.1199
-  - name: "Blue Lagoon"
-    coordinates:
-      lat: 63.8804
-      long: -22.4495
-
-# Características
-travel_type: ["family", "self-drive"]
-activities: ["sightseeing", "hiking", "thermal-baths"]
-season: "summer"
-best_time: ["June", "July", "August"]
-duration: "3-days"
-budget_category: "mid-range"
-budget_range: "$2000-$3000"
-
-# Taxonomías para filtrado
-categories: ["blog", "family-travel"]
-travel: ["cities", "national-parks"]
-difficulty: "easy-moderate"
-age_range: ["all-ages", "school-age"]
-planning: ["transportation", "accommodation", "activities"]
-
-# Etiquetas para búsqueda
-tags: [
-  "iceland with kids",
-  "family travel iceland",
-  "golden circle guide",
-  "blue lagoon tips",
-  "reykjavik family activities",
-  "iceland 3 day itinerary",
-  "summer in iceland"
-]
-
-# Imágenes
-featured_image: "/images/blog/iceland/featured/arco_iris_result.webp"
-imageAlt: "Colorful houses in Reykjavik with rainbow street, Iceland"
-gallery_folder: "/images/blog/iceland/content/"
-
 # Social Sharing
 og_title: "3 Days in Iceland with Kids: Complete Family Guide"
-og_description: "Plan the perfect 3-day family trip to Iceland. Insider tips for Golden Circle, Blue Lagoon & kid-friendly activities. Includes maps, costs & practical advice."
+og_description: "Plan the perfect 3-day family trip to Iceland. Tips for the Golden Circle, Blue Lagoon and kid-friendly activities. Includes maps, costs and recommendations."
 og_image: "/images/blog/iceland/featured/Reykjavik.jpg"
 og_type: "article"
-
 ---
 
 <figure class="blog-image">
