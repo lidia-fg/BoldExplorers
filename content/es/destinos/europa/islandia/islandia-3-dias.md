@@ -77,13 +77,6 @@ og_type: "article"
 
 
 
-<figure class="blog-image">
-    <img src="/images/blog/iceland/content/Thingvellir2_result.webp" 
-         alt="Thingvellir National Park" 
-         loading="lazy"
-         style="max-width: 800px; width: 100%;">
-    <figcaption> Eurasian and North American tectonic plates</figcaption>
-</figure>
 
 
 
@@ -103,6 +96,13 @@ Reykjavik es una ciudad pintoresca y tranquila, ideal para pasear en familia. Vi
 1. **Harpa Concert Hall:** Este edificio es una maravilla arquitectónica de vidrio, donde los reflejos y luces atraparon la atención de los niños.
 2. **Hallgrímskirkja Church:** Inspirada en las columnas de basalto, ofrece una vista espectacular desde el mirador.
 3. **Sun Voyager Sculpture:** Una escultura en forma de barco vikingo que simboliza el espíritu de aventura, perfecta para unas fotos familiares.
+ <figure class="blog-image">
+    <img src="/images/blog/iceland/content/Thingvellir2_result.webp" 
+         alt="Thingvellir National Park" 
+         loading="lazy"
+         style="max-width: 800px; width: 100%;">
+    <figcaption> Eurasian and North American tectonic plates</figcaption>
+</figure>
 
 
 **El Círculo Dorado: La Ronda de la Naturaleza**  

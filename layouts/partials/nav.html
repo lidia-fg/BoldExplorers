@@ -1,64 +1,75 @@
 <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
     <div class="navbar navbar-default yamm" role="navigation" id="navbar">
         <div class="container">
+            <!-- Header con Logo -->
             <div class="navbar-header">
-                <a class="navbar-brand home" href="{{ .Site.BaseURL }}">
-                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }} logo">
+                <a class="navbar-brand home" href="{{ .Site.Home.RelPermalink }}">
+                    <!-- Logo responsive -->
+                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }} logo" class="hidden-xs hidden-sm">
+                    <img src="{{ .Site.Params.logo_small | relURL }}" alt="{{ .Site.Title }} logo" class="visible-xs visible-sm">
+                    <span class="sr-only">{{ .Site.Title }}</span>
                 </a>
+                <!-- Botón móvil -->
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
-                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="sr-only">{{ i18n "navToggle" }}</span>
                         <i class="fas fa-align-justify"></i>
                     </button>
                 </div>
             </div>
+
+            <!-- Menú principal y selector de idioma -->
             <div class="navbar-collapse collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right">
+                    <!-- Elementos del menú principal -->
                     {{ $currentPage := . }}
                     {{ range .Site.Menus.main }}
                     <li class="nav-item{{ if $currentPage.HasMenuCurrent "main" . }} active{{ end }}">
                         <a href="{{ .URL | relLangURL }}" class="nav-link">{{ .Name }}</a>
                     </li>
                     {{ end }}
-                    
-                    <!-- Selector de idioma -->
-                    {{ if .IsTranslated }}
+
+                    <!-- Selector de idioma mejorado -->
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             {{ .Site.Language.LanguageName }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            {{ range .Translations }}
-                            <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-                            {{ end }}
-                        </ul>
-                    </li>
-                    {{ else }}
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            {{ .Site.Language.LanguageName }} <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            {{ $currentSection := .Section }}
-                            {{ range .Site.Languages }}
-                                {{ if ne . $.Site.Language }}
-                                    {{ $lang := .Lang }}
-                                    {{ $section := $currentSection }}
-                                    {{ if eq $currentSection "destinations" }}{{ $section = "destinos" }}
-                                    {{ else if eq $currentSection "destinos" }}{{ $section = "destinations" }}
-                                    {{ else if eq $currentSection "guides" }}{{ $section = "guias" }}
-                                    {{ else if eq $currentSection "guias" }}{{ $section = "guides" }}
-                                    {{ else if eq $currentSection "itineraries" }}{{ $section = "itinerarios" }}
-                                    {{ else if eq $currentSection "itinerarios" }}{{ $section = "itineraries" }}
-                                    {{ else if eq $currentSection "tips" }}{{ $section = "consejos" }}
-                                    {{ else if eq $currentSection "consejos" }}{{ $section = "tips" }}
+                            {{ if .IsTranslated }}
+                                <!-- Si la página tiene traducciones, mostrarlas -->
+                                {{ range .Translations }}
+                                <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                                {{ end }}
+                            {{ else }}
+                                <!-- Si no hay traducciones, manejar secciones especiales -->
+                                {{ $currentSection := .Section }}
+                                {{ range .Site.Languages }}
+                                    {{ if ne . $.Site.Language }}
+                                        {{ $lang := .Lang }}
+                                        {{ $section := $currentSection }}
+                                        {{ $sectionMap := dict 
+                                            "destinations" "destinos"
+                                            "destinos" "destinations"
+                                            "guides" "guias"
+                                            "guias" "guides"
+                                            "itineraries" "itinerarios"
+                                            "itinerarios" "itineraries"
+                                            "tips" "consejos"
+                                            "consejos" "tips"
+                                        }}
+                                        {{ $translatedSection := index $sectionMap $currentSection | default $currentSection }}
+                                        <li>
+                                            {{ if eq $currentSection "" }}
+                                                <a href="/{{ $lang }}/">{{ .LanguageName }}</a>
+                                            {{ else }}
+                                                <a href="/{{ $lang }}/{{ $translatedSection }}">{{ .LanguageName }}</a>
+                                            {{ end }}
+                                        </li>
                                     {{ end }}
-                                    <li><a href="/{{ $lang }}/{{ $section }}">{{ .LanguageName }}</a></li>
                                 {{ end }}
                             {{ end }}
                         </ul>
                     </li>
-                    {{ end }}
                 </ul>
             </div>
         </div>

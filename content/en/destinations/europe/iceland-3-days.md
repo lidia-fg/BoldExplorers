@@ -76,16 +76,7 @@ og_image: "/images/blog/iceland/featured/Reykjavik.jpg"
 og_type: "article"
 ---
 
-<figure class="blog-image">
-    <img src="/images/blog/iceland/content/Thingvellir2_result.webp" 
-         alt="Thingvellir National Park" 
-         loading="lazy"
-         style="max-width: 800px; width: 100%;">
-    <figcaption> Eurasian and North American tectonic plates</figcaption>
-</figure>
-
-
-### An Unforgettable Family Trip
+## An Unforgettable Family Trip
 
 Imagine landing in Iceland in the early hours of the morning, not quite sure what to expect from this country with its unique landscapes and powerful natural phenomena. With just three days to explore, our mission was clear: visit geysers, waterfalls, and volcanoes, and unwind in Iceland's geothermal waters. A trip packed with excitement and discoveries!
 
@@ -102,6 +93,13 @@ Reykjavik is a charming, tranquil city, perfect for a family stroll. We visited 
 2. **Hallgrímskirkja Church:** Inspired by basalt columns, it offers a spectacular view from the observation deck.
 3. **Sun Voyager Sculpture:** This Viking ship sculpture symbolizes the spirit of adventure and is perfect for family photos.
 
+<figure class="blog-image">
+    <img src="/images/blog/iceland/content/Thingvellir2_result.webp" 
+         alt="Thingvellir National Park" 
+         loading="lazy"
+         style="max-width: 800px; width: 100%;">
+    <figcaption> Eurasian and North American tectonic plates</figcaption>
+</figure>
 
 **The Golden Circle: Nature's Roundabout**  
 We explored the famous Golden Circle, discovering some of Iceland's most breathtaking landscapes.

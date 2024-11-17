@@ -1,0 +1,38 @@
+{{ define "main" }}
+<article class="post">
+    <!-- Hero minimalista -->
+    <header class="post-hero">
+        {{ if .Params.featured_image }}
+        <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="hero-image">
+        {{ end }}
+        
+        <div class="hero-content">
+            <div class="meta">
+                {{ if .Date }}{{ .Date.Format "January 2, 2006" }}{{ end }}
+                {{ with .Params.location }} · {{ . }}{{ end }}
+            </div>
+            <h1>{{ .Title }}</h1>
+        </div>
+    </header>
+
+    <!-- Info esencial -->
+    <div class="trip-info">
+        {{ with .Params.duration }}
+        <span>{{ . }}</span>
+        {{ end }}
+        {{ with .Params.difficulty }}
+        <span class="separator">·</span>
+        <span>{{ . }}</span>
+        {{ end }}
+        {{ with .Params.budget }}
+        <span class="separator">·</span>
+        <span>{{ . }}</span>
+        {{ end }}
+    </div>
+
+    <!-- Contenido -->
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}
