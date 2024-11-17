@@ -63,7 +63,7 @@ canonifyURLs = true
 
 
        [languages.en.permalinks]
-           blog = "/blog/:slug/"
+           blog = "/blog/:sections[1:]/:slug/"
            destinations = "/destinations/:sections[1:]/:slug/"
            guides = "/guides/:slug/"
            itineraries = "/itineraries/:slug/"
@@ -106,7 +106,7 @@ canonifyURLs = true
         mainSections = ["blog", "destinos", "guias", "itinerarios", "consejos"]
        
        [languages.es.permalinks]
-           blog = "/blog/:slug/"
+           blog = "/blog/:sections[1:]/:slug/"
            destinos = "/destinos/:sections[1:]/:slug/"
            guias = "/guias/:slug/"
            itinerarios = "/itinerarios/:slug/"
