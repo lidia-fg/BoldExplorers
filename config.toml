@@ -60,8 +60,6 @@ canonifyURLs = true
     [languages.en.params]
         mainSections = ["blog", "destinations", "guides", "itineraries", "tips"]
 
-
-
        [languages.en.permalinks]
            blog = "/blog/:sections[1:]/:slug/"
            destinations = "/destinations/:sections[1:]/:slug/"

@@ -56,7 +56,7 @@ gallery_folder: "/images/blog/iceland/content/"
 # Datos Adicionales
 trip_cost: "$2000-$3000"
 best_months: ["junio", "julio", "agosto"]
-author: "Exploradores Audaces"
+author: "Bold Explorers"
 
 # Schema.org
 schema:
@@ -64,7 +64,7 @@ schema:
   datePublished: "2024-03-14"
   dateModified: "2024-03-14"
   wordCount: "2500"
-  author: "Exploradores Audaces"
+  author: "Bold Explorers"
   destination: "Islandia"
   tripDuration: "3 días"
 
@@ -74,13 +74,6 @@ og_description: "Planea el viaje familiar perfecto de 3 días a Islandia. Consej
 og_image: "/images/blog/iceland/featured/Reykjavik.jpg"
 og_type: "article"
 ---
-
-
-
-
-
-
-### Un Viaje Familiar Inolvidable
 
 Imaginen aterrizar en Islandia en plena madrugada, sin saber exactamente qué esperar de este país de paisajes únicos y fenómenos naturales tan poderosos. Con tres días en el país, nuestro objetivo era explorar géiseres, cascadas, volcanes y relajarnos en sus aguas geotérmicas. ¡Una aventura cargada de emociones y descubrimientos!
 

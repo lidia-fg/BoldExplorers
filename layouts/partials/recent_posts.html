@@ -1,0 +1,39 @@
+{{ if isset .Site.Params "recent_posts" }}
+{{ if .Site.Params.recent_posts.enable }}
+<section class="recent-posts-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>{{ .Site.Params.recent_posts.title | markdownify }}</h2>
+            <p class="subtitle">{{ .Site.Params.recent_posts.subtitle | markdownify }}</p>
+        </div>
+        
+        <div class="row">
+            {{ $posts := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+            {{ range first 4 $posts.Pages }}
+            <div class="col-md-3 col-sm-6">
+                <article class="post-card">
+                    {{ if .Params.featured_image }}
+                    <div class="post-image">
+                        <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Params.image_alt | default .Title }}" />
+                    </div>
+                    {{ end }}
+                    <div class="post-content">
+                        <div class="post-meta">
+                            {{ .Date.Format "January 2, 2006" }}
+                        </div>
+                        <h3 class="post-title">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h3>
+                        <div class="post-excerpt">
+                            {{ .Summary | truncate 100 }}
+                        </div>
+                        <a href="{{ .Permalink }}" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

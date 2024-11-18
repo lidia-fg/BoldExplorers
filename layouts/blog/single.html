@@ -1,36 +1,42 @@
 {{ define "main" }}
 <article class="post">
-    <!-- Hero minimalista -->
-    <header class="post-hero">
+    <div class="post-hero">
         {{ if .Params.featured_image }}
-        <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="hero-image">
+            <!-- Hero image con overlay -->
+            <div class="hero-image" style="background-image: url('{{ .Params.featured_image }}')"></div>
+            <div class="hero-overlay"></div>
         {{ end }}
         
         <div class="hero-content">
             <div class="meta">
-                {{ if .Date }}{{ .Date.Format "January 2, 2006" }}{{ end }}
-                {{ with .Params.location }} · {{ . }}{{ end }}
+                {{ if .Date }}
+                    <span>{{ .Date.Format "January 2, 2006" }}</span>
+                {{ end }}
+                {{ with .Params.countries }}
+                    <span class="separator">·</span>
+                    <span>{{ . }}</span>
+                {{ end }}
             </div>
             <h1>{{ .Title }}</h1>
         </div>
-    </header>
+    </div>
 
-    <!-- Info esencial -->
+    <!-- Trip info -->
     <div class="trip-info">
         {{ with .Params.duration }}
-        <span>{{ . }}</span>
+            <span>{{ . }}</span>
         {{ end }}
         {{ with .Params.difficulty }}
-        <span class="separator">·</span>
-        <span>{{ . }}</span>
+            <span class="separator">·</span>
+            <span>{{ . }}</span>
         {{ end }}
         {{ with .Params.budget }}
-        <span class="separator">·</span>
-        <span>{{ . }}</span>
+            <span class="separator">·</span>
+            <span>{{ . }}</span>
         {{ end }}
     </div>
 
-    <!-- Contenido -->
+    <!-- Content -->
     <div class="post-content">
         {{ .Content }}
     </div>
