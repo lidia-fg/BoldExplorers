@@ -283,3 +283,91 @@
   translation: "Country"
 - id: geography.timezone
   translation: "Time Zone"
+
+# i18n/en.yaml
+# [Mantener todas las traducciones existentes...]
+
+# Nuevas traducciones para la página de destinos
+- id: exploreWorld
+  translation: "Explore the World"
+- id: exploreWorldDesc
+  translation: "Discover amazing destinations across all continents"
+- id: featuredDestinations
+  translation: "Featured Destinations"
+- id: recentAdventures
+  translation: "Recent Adventures"
+- id: viewAllDestinations
+  translation: "View All Destinations"
+- id: relatedDestinations
+  translation: "Related Destinations"
+- id: continentOverview
+  translation: "Continent Overview"
+
+# Nombres de continentes (específicos del mapa)
+- id: map.northAmerica
+  translation: "North America"
+- id: map.southAmerica
+  translation: "South America"
+- id: map.europe
+  translation: "Europe"
+- id: map.africa
+  translation: "Africa"
+- id: map.asia
+  translation: "Asia"
+- id: map.oceania
+  translation: "Oceania"
+
+
+# Traducciones específicas para la página de destinos
+- id: exploreWorld
+  translation: "Explore the World"
+- id: exploreWorldDesc
+  translation: "Discover amazing destinations across all continents"
+- id: featuredDestinations
+  translation: "Featured Destinations"
+- id: recentAdventures
+  translation: "Recent Adventures"
+- id: viewAllDestinations
+  translation: "View All Destinations"
+- id: relatedDestinations
+  translation: "Related Destinations"
+- id: continentOverview
+  translation: "Continent Overview"
+
+# Nombres de continentes (específicos del mapa)
+- id: map.northAmerica
+  translation: "Norte América"
+- id: map.southAmerica
+  translation: "Sur América"
+- id: map.europe
+  translation: "Europa"
+- id: map.africa
+  translation: "África"
+- id: map.asia
+  translation: "Asia"
+- id: map.oceania
+  translation: "Oceanía"
+  # Search Modal translations (nuevas)
+- id: searchPlaceholder
+  translation: "Buscar destinos, guías y consejos..."
+- id: searchNoResults
+  translation: "No se encontraron resultados"
+- id: showMoreResults
+  translation: "Ver más resultados"
+- id: searchResults
+  translation: "Resultados"
+
+# Search Result Types
+- id: searchResultType.destination
+  translation: "Destino"
+- id: searchResultType.guide
+  translation: "Guía"
+- id: searchResultType.blog
+  translation: "Blog"
+- id: searchResultType.tip
+  translation: "Consejo"
+
+- id: storiesAbout
+  translation: "Stories about %s"
+- id: guidesAndInfo
+  translation: "Guides and Information"

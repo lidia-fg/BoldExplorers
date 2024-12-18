@@ -1,0 +1,85 @@
+{{ define "main" }}
+<div class="destinations-page">
+    <!-- Hero Section -->
+    <section class="destinations-hero">
+        <div class="container">
+            <h1 class="section-title">{{ T "exploreWorld" }}</h1>
+            <p class="section-subtitle">{{ T "exploreWorldDesc" }}</p>
+        </div>
+    </section>
+
+    <!-- Continents Section -->
+    <section class="continents-section">
+        <div class="container">
+            <div class="continents-grid">
+                {{ range .Pages }}
+                <a href="{{ .Permalink }}" class="continent-card">
+                    <div class="continent-image">
+                        {{ if .Params.featured_image }}
+                        <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}">
+                        {{ else }}
+                        <img src="/images/placeholder.jpg" alt="{{ .Title }}">
+                        {{ end }}
+                        <div class="continent-overlay">
+                            <h2 class="continent-title">{{ .Title }}</h2>
+                        </div>
+                    </div>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="featured-destinations">
+        <div class="container">
+            <h2 class="section-title">{{ T "featuredDestinations" }}</h2>
+            <div class="destinations-grid">
+                {{ $section := .Section }}
+                {{ range first 6 (where .Site.RegularPages "Section" $section) }}
+                <a href="{{ .Permalink }}" class="destination-card">
+                    <div class="destination-image">
+                        {{ if .Params.featured_image }}
+                        <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}">
+                        {{ else }}
+                        <img src="/images/placeholder.jpg" alt="{{ .Title }}">
+                        {{ end }}
+                        <div class="destination-overlay">
+                            <h3 class="destination-title">{{ .Title }}</h3>
+                        </div>
+                    </div>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Adventures -->
+    <section class="recent-adventures">
+        <div class="container">
+            <h2 class="section-title">{{ T "recentAdventures" }}</h2>
+            <div class="adventures-grid">
+                {{ $blogSection := "blog" }}
+                {{ $recentPosts := where .Site.RegularPages "Section" $blogSection | first 3 }}
+                {{ range $recentPosts }}
+                <div class="adventure-card">
+                    <div class="adventure-image">
+                        {{ if .Params.featured_image }}
+                        <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}">
+                        {{ else }}
+                        <img src="/images/placeholder.jpg" alt="{{ .Title }}">
+                        {{ end }}
+                    </div>
+                    <div class="adventure-content">
+                        <h3 class="adventure-title">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h3>
+                        <time class="adventure-date">{{ .Date.Format "2006-01-02" }}</time>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+</div>
+{{ end }}

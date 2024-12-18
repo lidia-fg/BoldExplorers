@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        {{ range .Page.Pages }}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h3>
+                        {{ with .Description }}
+                            <p class="card-text">{{ . }}</p>
+                        {{ end }}
+                        {{ if .Pages }}
+                            <ul class="list-unstyled">
+                                {{ range first 3 .Pages }}
+                                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                                {{ end }}
+                            </ul>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</div>

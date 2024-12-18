@@ -1,0 +1,41 @@
+{{ define "main" }}
+<article class="destination-page">
+    <!-- Country Content -->
+    <div class="country-content">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </div>
+
+    <!-- Blog Posts about this country -->
+    {{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
+    {{ $countryName := lower .Title }}
+    {{ $relatedPosts := where $blogPosts ".Params.countries" "intersect" (slice $countryName) }}
+    
+    {{ if $relatedPosts }}
+    <section class="country-blog-posts">
+        <h2>Stories from {{ .Title }}</h2>
+        <div class="posts-grid">
+            {{ range $relatedPosts }}
+            <!-- Aquí los enlaces apuntarán al post en la sección blog -->
+            <article class="post-card">
+                <a href="{{ .RelPermalink }}" class="post-link">
+                    {{ if .Params.featured_image }}
+                    <div class="post-image">
+                        <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
+                    </div>
+                    {{ end }}
+                    <div class="post-info">
+                        <h3>{{ .Title }}</h3>
+                        <time>{{ .Date.Format "January 2, 2006" }}</time>
+                        {{ with .Params.meta_description }}
+                        <p>{{ . }}</p>
+                        {{ end }}
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+</article>
+{{ end }}

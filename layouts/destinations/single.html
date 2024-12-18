@@ -1,0 +1,40 @@
+{{ define "main" }}
+<article class="country-page">
+    <!-- Contenido del país -->
+    <div class="country-content container">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </div>
+
+    <!-- Posts relacionados -->
+    {{ $currentCountry := lower .Title }}
+    {{ $blogPosts := where (where .Site.RegularPages "Section" "blog") ".Params.countries" "intersect" (slice $currentCountry) }}
+
+    {{ if $blogPosts }}
+    <section class="recent-adventures">
+        <div class="container">
+            <h2 class="section-title">Stories about {{ .Title }}</h2>
+            <div class="adventures-grid">
+                {{ range $blogPosts }}
+                <div class="adventure-card">
+                    <div class="adventure-image">
+                        {{ if .Params.featured_image }}
+                        <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}" loading="lazy">
+                        {{ else }}
+                        <img src="/images/placeholder.jpg" alt="{{ .Title }}" loading="lazy">
+                        {{ end }}
+                    </div>
+                    <div class="adventure-content">
+                        <h3 class="adventure-title">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h3>
+                        <time class="adventure-date">{{ .Date.Format "2006-01-02" }}</time>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+</article>
+{{ end }}

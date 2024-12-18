@@ -1,0 +1,37 @@
+{{ define "main" }}
+<!-- Primero mostramos el contenido del país -->
+<article class="country-page">
+    <div class="country-content">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </div>
+
+    <!-- Luego buscamos y mostramos los posts del blog sobre este país -->
+    {{ $countryName := lower .Title }}
+    {{ $blogPosts := where (where .Site.RegularPages "Section" "blog") ".Params.countries" "intersect" (slice $countryName) }}
+
+    {{ if $blogPosts }}
+    <section class="country-blog-posts">
+        <h2>Stories from {{ .Title }}</h2>
+        <div class="posts-grid">
+            {{ range $blogPosts }}
+            <div class="post">
+                {{ if .Params.featured_image }}
+                <div class="post-image">
+                    <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
+                </div>
+                {{ end }}
+                <div class="post-content">
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <time>{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ with .Params.meta_description }}
+                    <p>{{ . }}</p>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,44 @@
+// assets/js/world-map.js
+document.addEventListener('DOMContentLoaded', function() {
+    const currentLang = document.documentElement.lang || 'en';
+    
+    const urlMap = {
+        en: {
+            'north-america': '/en/destinations/north-america/',
+            'south-america': '/en/destinations/south-america/',
+            'europe': '/en/destinations/europe/',
+            'africa': '/en/destinations/africa/',
+            'asia': '/en/destinations/asia/',
+            'oceania': '/en/destinations/oceania/'
+        },
+        es: {
+            'north-america': '/es/destinos/norte-america/',
+            'south-america': '/es/destinos/sur-america/',
+            'europe': '/es/destinos/europa/',
+            'africa': '/es/destinos/africa/',
+            'asia': '/es/destinos/asia/',
+            'oceania': '/es/destinos/oceania/'
+        }
+    };
+
+    document.querySelectorAll('.continent-group').forEach(continent => {
+        continent.addEventListener('click', function() {
+            const continentId = this.getAttribute('data-continent');
+            const targetUrl = urlMap[currentLang][continentId];
+            if (targetUrl) {
+                window.location.href = targetUrl;
+            }
+        });
+
+        // Añadir efectos hover
+        continent.addEventListener('mouseenter', function() {
+            const path = this.querySelector('.continent');
+            path.style.opacity = '1';
+        });
+        
+        continent.addEventListener('mouseleave', function() {
+            const path = this.querySelector('.continent');
+            path.style.opacity = '0.8';
+        });
+    });
+});

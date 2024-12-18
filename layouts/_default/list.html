@@ -1,18 +1,50 @@
 {{ define "main" }}
 <div class="blog-list">
     <h1 class="section-title">{{ .Title }}</h1>
-    
+    {{/* Solo mostrar grid de continentes en la sección principal de destinos */}}
+    {{ if and (eq .Section "destinations" "destinos") (eq .CurrentSection .FirstSection) }}
+    <div class="destinations-grid">
+        {{ range .Pages }}
+        <a href="{{ .Permalink }}" class="destination-card">
+            {{ if .Params.featured_image }}
+            <div class="destination-image">
+                <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}">
+                <div class="destination-overlay"></div>
+            </div>
+            {{ end }}
+            <h2 class="destination-title">{{ .Title }}</h2>
+        </a>
+        {{ end }}
+    </div>
+    {{ else }}
+    {{/* Grid estándar para blog y consejos */}}
     <div class="blog-grid">
         {{ range .Pages }}
         <a href="{{ .Permalink }}" class="blog-card">
             {{ if .Params.featured_image }}
             <div class="blog-image">
-                <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}">
+                <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}" loading="lazy">
             </div>
             {{ end }}
-            <h2 class="blog-title">{{ .Title }}</h2>
+            <div class="blog-content">
+                {{ if .Params.category }}
+                <div class="post-category">{{ .Params.category }}</div>
+                {{ end }}
+                <h2 class="blog-title">{{ .Title }}</h2>
+                {{ if .Params.excerpt }}
+                <p class="post-excerpt">{{ .Params.excerpt }}</p>
+                {{ end }}
+                <div class="post-meta">
+                    <span class="post-date">{{ .Date.Format "02.01.2006" }}</span>
+                    {{ if .Params.reading_time }}
+                    <span class="separator">·</span>
+                    <span class="reading-time">{{ .Params.reading_time }} min read</span>
+                    {{ end }}
+                </div>
+            </div>
         </a>
         {{ end }}
     </div>
+    {{ end }}
 </div>
 {{ end }}

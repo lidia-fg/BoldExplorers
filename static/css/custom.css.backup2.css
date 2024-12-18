@@ -1,4 +1,4 @@
-/* 1. Variables del Sistema */
+/* Variables del Sistema */
 :root {
   /* Colores */
   --primary: #0d3b66;
@@ -31,83 +31,12 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-/* 2. Reset y Estilos Base */
+/* Reset y Estilos Base */
 body {
-  padding-top: 80px;
+  padding-top: 80px; /* Este es el padding que controla el espacio para el menú */
 }
 
-/* 3. Navegación */
-/* 3.1 Navbar Base */
-.navbar-affixed-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1030;
-}
-
-.navbar-default {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border: none;
-  box-shadow: var(--shadow-sm);
-  margin-bottom: 0;
-}
-
-.navbar > .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-  height: 80px;
-}
-
-/* 3.2 Logo y Marca */
-.navbar-header {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
-}
-
-.navbar-brand {
-  padding: 15px 0;
-  height: auto;
-  display: flex;
-  align-items: center;
-}
-
-.brand-text {
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--text);
-  letter-spacing: 1px;
-}
-
-/* 3.3 Menú Principal */
-.navbar-collapse {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.navbar-nav {
-  float: right !important;
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-default .navbar-nav > li > a {
-  padding: 15px 20px;
-  color: var(--text) !important;
-  font-weight: 500;
-  transition: color 0.2s ease;
-  line-height: 1.5;
-}
-
-/* 4. Página de Destinos */
-/* 4.1 Hero Section */
+/* Destinations Page */
 .destinations-page {
   background-color: var(--background);
 }
@@ -130,7 +59,8 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
-/* 4.2 Grid de Continentes */
+
+/* Grid de Continentes */
 .continents-section {
   padding: 4rem 0;
   background-color: white;
@@ -155,6 +85,11 @@ body {
   text-decoration: none;
   box-shadow: var(--shadow-sm);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.continent-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
 }
 
 .continent-image {
@@ -192,7 +127,7 @@ body {
   color: white;
 }
 
-/* 4.3 Featured Destinations */
+/* Featured Destinations */
 .featured-destinations {
   padding: 4rem 0;
   background: var(--background);
@@ -237,7 +172,7 @@ body {
   object-fit: cover;
 }
 
-/* 4.4 Recent Adventures */
+/* Recent Adventures */
 .recent-adventures {
   padding: 4rem 0;
   background: var(--background);
@@ -298,8 +233,149 @@ body {
   color: var(--text-secondary);
 }
 
-/* 5. Blog */
-/* 5.1 Lista de Posts */
+/* Sección de título */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+  color: #000;
+}
+/* Navbar Unificado */
+.navbar-affixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.navbar-default {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0;
+}
+
+/* Alineación del menú */
+.navbar > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 80px;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end; /* Alinea todo a la derecha */
+}
+
+.navbar-nav {
+  float: right !important; /* Sobrescribe Bootstrap */
+}
+
+/* Asegurarnos que el logo está a la izquierda */
+.navbar-header {
+  float: left;
+  margin-right: auto; /* Empuja todo lo demás a la derecha */
+}
+
+/* Logo */
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  padding: 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+/* Menú principal */
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-default .navbar-nav {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-default .navbar-nav > li > a {
+  padding: 0.5rem 1rem;
+  color: var(--text) !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .destinations-grid,
+  .adventures-grid,
+  .continents-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .destinations-hero .section-title {
+    font-size: 2.5rem;
+  }
+
+  .destinations-grid,
+  .adventures-grid,
+  .continents-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .continent-title {
+    font-size: 1.25rem;
+  }
+  
+  body {
+    padding-top: 60px;
+  }
+  .navbar > .container {
+    height: 60px;
+  }
+  
+  .navbar-brand img {
+    height: 30px;
+  }
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .navbar-nav {
+    float: none !important;
+    margin: 0;
+  }
+}
+
+/* Todo tu CSS actual se mantiene igual hasta el final, y luego añadimos: */
+
+/* Blog List Styles */
 .blog-list {
   background-color: var(--background);
   padding: var(--spacing-2xl) 0;
@@ -333,7 +409,7 @@ body {
 
 .blog-image {
   position: relative;
-  padding-top: 56.25%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
   overflow: hidden;
 }
 
@@ -353,7 +429,76 @@ body {
   flex-direction: column;
 }
 
-/* 5.2 Post Individual */
+.post-category {
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: var(--spacing-xs) 0;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.post-excerpt {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: var(--spacing-sm) 0;
+  flex-grow: 1;
+}
+
+.post-meta {
+  margin-top: var(--spacing-md);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.post-date {
+  display: inline-block;
+}
+
+.reading-time {
+  display: inline-block;
+}
+
+.reading-time:before {
+  content: "•";
+  margin: 0 var(--spacing-xs);
+}
+
+/* Responsive adjustments for blog */
+@media (max-width: 1200px) {
+  .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+      padding: 0 var(--spacing-sm);
+  }
+
+  .blog-title {
+      font-size: 1.1rem;
+  }
+
+  .post-excerpt {
+      font-size: 0.85rem;
+  }
+}
+/* Blog Post - Single Page */
 .blog-post {
   max-width: 100%;
   margin: 0 auto;
@@ -429,93 +574,87 @@ body {
   margin-bottom: var(--spacing-md);
 }
 
-/* 7. Utilidades y Componentes Comunes */
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  margin-bottom: 3rem;
-  color: #000;
-}
-
-/* 8. Media Queries */
-@media (max-width: 1200px) {
-  .destinations-grid,
-  .adventures-grid,
-  .continents-grid,
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  body {
-    padding-top: 60px;
-  }
-
-  .navbar > .container {
-    height: 60px;
-    padding: 0 20px;
-  }
-
-  .brand-text {
-    font-size: 20px;
-  }
-
-  .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    border-top: 1px solid rgba(0,0,0,0.1);
-  }
-
-  .navbar-nav {
-    float: none !important;
-    margin: 0;
-  }
-
-  .destinations-hero .section-title {
-    font-size: 2.5rem;
-  }
-
-  .destinations-grid,
-  .adventures-grid,
-  .continents-grid,
-  .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 var(--spacing-sm);
-  }
-
-  .continent-title {
-    font-size: 1.25rem;
-  }
-
-  .blog-title {
-    font-size: 1.1rem;
-  }
-
-  .post-excerpt {
-    font-size: 0.85rem;
-  }
-
   .post-title {
-    font-size: 2rem;
+      font-size: 2rem;
   }
 
   .post-description {
-    font-size: 1.1rem;
+      font-size: 1.1rem;
   }
 
   .post-content {
-    font-size: 1rem;
+      font-size: 1rem;
   }
-
+  
   .post-header {
-    padding: var(--spacing-lg) 0;
+      padding: var(--spacing-lg) 0;
+  }
+}
+
+/* Logo y navegación */
+.navbar-brand {
+  padding: var(--spacing-sm) 0;  /* Ajusta según necesites */
+  margin-right: auto;  /* Importante para alinear a la izquierda */
+}
+
+.navbar-brand img {
+  height: 70px;  /* Ajusta según el tamaño de tu logo */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Para versión móvil */
+@media (max-width: 768px) {
+  .navbar-brand img {
+      height: 30px;  /* Ajusta según necesites */
+  }
+}
+
+/* Container principal */
+.navbar > .container {
+  display: flex;
+  justify-content: space-between; /* Esto distribuye el espacio entre el logo y el menú */
+  align-items: center;
+  padding: 0 30px; /* Añade padding en los laterales */
+}
+
+/* Container principal */
+.navbar > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px; /* Más padding horizontal */
+}
+
+/* Logo */
+.navbar-brand {
+  padding: 15px 0; /* Añadir padding vertical */
+}
+
+.brand-text {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 1px;
+}
+
+/* Menú de navegación */
+.navbar-nav > li > a {
+  padding: 15px 20px; /* Más espacio entre items del menú */
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+  .navbar > .container {
+      padding: 0 20px; /* Menos padding en móvil */
+  }
+}
+
+/* Para móvil */
+@media (max-width: 768px) {
+  .brand-text {
+      font-size: 20px;
   }
 }

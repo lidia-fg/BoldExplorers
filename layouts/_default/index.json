@@ -1,0 +1,13 @@
+{
+    "results": [
+        {{ range $index, $page := where .Site.RegularPages "Type" "not in"  (slice "page" "json") }}
+        {{ if $index }}, {{ end }}
+        {
+            "title": {{ .Title | jsonify }},
+            "section": {{ .Section | jsonify }},
+            "permalink": {{ .Permalink | jsonify }},
+            "summary": {{ .Summary | plainify | jsonify }}
+        }
+        {{ end }}
+    ]
+}

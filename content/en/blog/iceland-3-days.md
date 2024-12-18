@@ -10,6 +10,7 @@ type: "blog"
 
 # Main Taxonomies
 categories: ["blog"]
+tags: ["iceland", "europe", "family travel"]
 continents: ["europe"]
 countries: ["iceland"]
 travel: ["adventure", "nature", "cities"]

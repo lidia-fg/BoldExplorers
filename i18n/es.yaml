@@ -1,5 +1,4 @@
 # i18n/es.yaml
-# Traducciones existentes del tema
 - id: home
   translation: "Inicio"
 - id: templateBy
@@ -43,7 +42,7 @@
 - id: aboutUs
   translation: "Sobre nosotros"
 - id: newer
-  translation: "Más nuevo"
+  translation: "Más reciente"
 - id: older
   translation: "Más antiguo"
 - id: publishedOn
@@ -79,71 +78,7 @@
 - id: December
   translation: Diciembre
 
-# Nuevas traducciones para taxonomías
-- id: taxonomies.categories
-  translation: "Categorías"
-- id: taxonomies.continents
-  translation: "Continentes"
-- id: taxonomies.countries
-  translation: "Países"
-- id: taxonomies.travel
-  translation: "Tipos de Viaje"
-- id: taxonomies.activities
-  translation: "Actividades"
-- id: taxonomies.seasons
-  translation: "Temporadas"
-- id: taxonomies.difficulties
-  translation: "Niveles de Dificultad"
-- id: taxonomies.planning
-  translation: "Planificación"
-- id: taxonomies.duration
-  translation: "Duración"
-- id: taxonomies.budget
-  translation: "Presupuesto"
-
-# Valores para taxonomías
-- id: taxonomy.categories.blog
-  translation: "Post del Blog"
-- id: taxonomy.categories.guide
-  translation: "Guía de Viaje"
-- id: taxonomy.categories.destination
-  translation: "Destino"
-- id: taxonomy.categories.itinerary
-  translation: "Itinerario"
-- id: taxonomy.categories.tip
-  translation: "Consejo de Viaje"
-
-- id: taxonomy.travel.adventure
-  translation: "Aventura"
-- id: taxonomy.travel.cultural
-  translation: "Cultural"
-- id: taxonomy.travel.nature
-  translation: "Naturaleza"
-- id: taxonomy.travel.cities
-  translation: "Ciudades"
-
-- id: taxonomy.difficulties.easy
-  translation: "Fácil"
-- id: taxonomy.difficulties.moderate
-  translation: "Moderado"
-- id: taxonomy.difficulties.challenging
-  translation: "Desafiante"
-
-- id: taxonomy.duration.weekend
-  translation: "Fin de Semana"
-- id: taxonomy.duration.short-trip
-  translation: "Viaje Corto"
-- id: taxonomy.duration.long-trip
-  translation: "Viaje Largo"
-
-- id: taxonomy.budget.budget
-  translation: "Económico"
-- id: taxonomy.budget.mid-range
-  translation: "Precio Medio"
-- id: taxonomy.budget.luxury
-  translation: "Lujo"
-
-  # Taxonomías principales
+# Taxonomías principales
 - id: taxonomies.categories
   translation: "Categorías"
 - id: taxonomies.continents
@@ -167,7 +102,7 @@
 
 # Categorías
 - id: taxonomy.categories.blog
-  translation: "Post del Blog"
+  translation: "Blog"
 - id: taxonomy.categories.guide
   translation: "Guía de Viaje"
 - id: taxonomy.categories.destination
@@ -181,9 +116,9 @@
 - id: taxonomy.continents.europe
   translation: "Europa"
 - id: taxonomy.continents.north-america
-  translation: "América del Norte"
+  translation: "Norte América"
 - id: taxonomy.continents.south-america
-  translation: "América del Sur"
+  translation: "Sur América"
 - id: taxonomy.continents.asia
   translation: "Asia"
 - id: taxonomy.continents.africa
@@ -282,3 +217,58 @@
   translation: "País"
 - id: geography.timezone
   translation: "Zona Horaria"
+
+# Traducciones específicas para la página de destinos
+- id: exploreWorld
+  translation: "Explora el Mundo"
+- id: exploreWorldDesc
+  translation: "Descubre destinos increíbles en todos los continentes"
+- id: featuredDestinations
+  translation: "Destinos Destacados"
+- id: recentAdventures
+  translation: "Aventuras Recientes"
+- id: viewAllDestinations
+  translation: "Ver Todos los Destinos"
+- id: relatedDestinations
+  translation: "Destinos Relacionados"
+- id: continentOverview
+  translation: "Resumen del Continente"
+
+# Nombres de continentes (específicos del mapa)
+- id: map.northAmerica
+  translation: "Norte América"
+- id: map.southAmerica
+  translation: "Sur América"
+- id: map.europe
+  translation: "Europa"
+- id: map.africa
+  translation: "África"
+- id: map.asia
+  translation: "Asia"
+- id: map.oceania
+  translation: "Oceanía"
+
+  # Search Modal translations (nuevas)
+- id: searchPlaceholder
+  translation: "Buscar destinos, guías y consejos..."
+- id: searchNoResults
+  translation: "No se encontraron resultados"
+- id: showMoreResults
+  translation: "Ver más resultados"
+- id: searchResults
+  translation: "Resultados"
+
+# Search Result Types
+- id: searchResultType.destination
+  translation: "Destino"
+- id: searchResultType.guide
+  translation: "Guía"
+- id: searchResultType.blog
+  translation: "Blog"
+- id: searchResultType.tip
+  translation: "Consejo"
+
+- id: storiesAbout
+  translation: "Historias sobre %s"
+- id: guidesAndInfo
+  translation: "Guías e Información"

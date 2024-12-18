@@ -1,4 +1,5 @@
 ---
-title: "Destinations"
-translationKey: "destinations-section"
+#title: "Destinations EN"
+translationKey: "destinations"
+description: "Discover incredible destinations across all continents"
 ---

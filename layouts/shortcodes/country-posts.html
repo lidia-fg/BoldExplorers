@@ -1,0 +1,23 @@
+{{ $currentCountry := "iceland" }}
+{{ $posts := where .Site.RegularPages "Section" "blog" }}
+{{ $relatedPosts := where $posts "Params.countries" "intersect" (slice $currentCountry) }}
+
+{{ range $relatedPosts }}
+<div class="col-md-4">
+    <div class="box-image-text blog">
+        {{ if .Params.image }}
+        <div class="top">
+            <div class="image">
+                <img src="{{ .Params.image }}" class="img-responsive" alt="{{ .Title }}">
+            </div>
+        </div>
+        {{ end }}
+        <div class="content">
+            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+            {{ with .Description }}
+            <p class="intro">{{ . }}</p>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

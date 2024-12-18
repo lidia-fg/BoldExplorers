@@ -1,0 +1,42 @@
+# data/destinations.toml
+
+[continents]
+  [continents.africa]
+    en = "Africa"
+    es = "África"
+    path_en = "destinations/africa"
+    path_es = "destinos/africa"
+    
+  [continents.asia]
+    en = "Asia"
+    es = "Asia"
+    path_en = "destinations/asia"
+    path_es = "destinos/asia"
+    
+  [continents.europe]
+    en = "Europe"
+    es = "Europa"
+    path_en = "destinations/europe"
+    path_es = "destinos/europa"
+    
+  [continents.north_america]
+    en = "North America"
+    es = "Norte América"
+    path_en = "destinations/north-america"
+    path_es = "destinos/norte-america"
+    
+  [continents.south_america]
+    en = "South America"
+    es = "Sur América"
+    path_en = "destinations/south-america"
+    path_es = "destinos/sur-america"
+    
+  [continents.oceania]
+    en = "Oceania"
+    es = "Oceanía"
+    path_en = "destinations/oceania"
+    path_es = "destinos/oceania"
+
+[metadata]
+  last_updated = "2024-03-23"
+  version = "1.0"

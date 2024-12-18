@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
-  <head>
+<head>
     {{ partial "headers.html" . }}
-  </head>
-  <body>
-    <div id="all">
-      <header>
-        {{ partial "nav.html" . }}
-      </header>
-
-      {{ block "main" . }}
-      {{ end }}
-
-      <footer>
-        {{ partial "footer.html" . }}
-      </footer>
-    </div><!-- /#all -->
+</head>
+<body>
+    {{ partial "nav.html" . }}
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    
+    <!-- Modal de Búsqueda -->
+    {{ if .Site.Params.search.enable }}
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <input type="text" 
+                           class="form-control search-input" 
+                           id="searchInput" 
+                           placeholder="{{ T "searchPlaceholder" }}"
+                           autocomplete="off">
+                </div>
+                <div class="modal-body">
+                    <!-- Contenedor de resultados -->
+                    <div id="searchResults">
+                        <!-- Los resultados se insertarán aquí dinámicamente -->
+                    </div>
+                    <!-- Mensaje de no resultados -->
+                    <div id="noResults" class="text-center py-4" style="display: none;">
+                        {{ T "searchNoResults" }}
+                    </div>
+                    <!-- Botón "Ver más" -->
+                    <div id="showMoreResults" class="text-center mt-4" style="display: none;">
+                        <button class="btn btn-primary">
+                            {{ T "showMoreResults" }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
 
     {{ partial "scripts.html" . }}
-  </body>
+    {{ block "scripts" . }}{{ end }}
+</body>
 </html>

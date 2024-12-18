@@ -2,7 +2,6 @@
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 {{ $title_plain := .Title | markdownify | plainify }}
 <title>
     {{- if .IsHome -}}
@@ -14,29 +13,7 @@
 
 <!-- Meta tags básicos -->
 <meta name="author" content="{{ .Param "author" }}" />
-
-<!-- Keywords -->
-{{ $keywords := .Site.Params.defaultKeywords | default (slice "" | first 0) }}
-{{ if isset .Params "tags" }}{{ range .Params.tags }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }}
-{{ if isset .Params "keywords" }}{{ range .Params.keywords }}{{ $keywords = $keywords | append . }}{{ end }}{{ end }}
-{{ if gt (len $keywords) 0 }}
-<meta name="keywords" content="{{ delimit (uniq $keywords) ", " }}">
-{{ end }}
-
-<!-- Description -->
-{{ $description_plain := default .Site.Params.defaultDescription .Description | markdownify | plainify }}
-<meta name="description" content="{{ $description_plain }}">
-
-<!-- Fecha de última modificación -->
-{{ with .Lastmod }}
-<meta name="last-modified" content="{{ .Format "2006-01-02" }}">
-{{ end }}
-
-{{ hugo.Generator }}
-
-<!-- Fuentes -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800&display=swap' rel='stylesheet'>
+<!-- Resto de meta tags... -->
 
 <!-- CSS Base -->
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.6.0/css/all.css" crossorigin="anonymous">
@@ -45,50 +22,61 @@
 
 <!-- Theme y Custom CSS -->
 {{ with .Site.Params.style }}
-  <link href="{{ "css/style" | relURL }}.{{ . }}.css" rel="stylesheet" id="theme-stylesheet">
+<link href="{{ "css/style" | relURL }}.{{ . }}.css" rel="stylesheet" id="theme-stylesheet">
 {{ else }}
-  <link href="{{ "css/style.default.css" | relURL }}" rel="stylesheet" id="theme-stylesheet">
+<link href="{{ "css/style.default.css" | relURL }}" rel="stylesheet" id="theme-stylesheet">
 {{ end }}
+
+<!-- Custom CSS con timestamp para cache busting -->
 <link href="{{ "css/custom.css" | relURL }}?{{ now.Unix }}" rel="stylesheet">
 
 <!-- Carousel CSS -->
 <link href="{{ "css/owl.carousel.css" | relURL }}" rel="stylesheet">
 <link href="{{ "css/owl.theme.css" | relURL }}" rel="stylesheet">
 
-<!-- RSS -->
-<link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
+<!-- Search Styles (Nuevos) -->
+{{ if .Site.Params.search.enable }}
+<style>
+.search-input {
+    border: none;
+    box-shadow: none;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 1rem;
+}
 
-<!-- OpenGraph mejorado -->
-<meta property="og:site_name" content="{{ .Site.Title }}">
-<meta property="og:locale" content="{{ .Site.Language.Lang }}">
-<meta property="og:title" content="{{ $title_plain }}">
-<meta property="og:description" content="{{ $description_plain }}">
-<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-<meta property="og:url" content="{{ .Permalink }}">
-{{ with .Params.featured_image }}
-<meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ if .IsPage }}
-    {{ with .PublishDate }}<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z0700" }}">{{ end }}
-    {{ with .Lastmod }}<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z0700" }}">{{ end }}
-{{ end }}
+.search-input:focus {
+    outline: none;
+    box-shadow: none;
+}
 
-<!-- Twitter Card mejorado -->
-<meta name="twitter:card" content="{{ with .Params.featured_image }}summary_large_image{{ else }}summary{{ end }}">
-{{ with .Site.Params.twitter }}
-<meta name="twitter:site" content="@{{ . }}">
-{{ end }}
-<meta name="twitter:title" content="{{ $title_plain }}">
-<meta name="twitter:description" content="{{ $description_plain }}">
-{{ with .Params.featured_image }}
-<meta name="twitter:image" content="{{ . | absURL }}">
-{{ end }}
+#searchModal .modal-dialog {
+    margin-top: 10vh;
+}
 
-<!-- Verificación de sitio si es necesario -->
-{{ with .Site.Params.google_site_verification }}
-<meta name="google-site-verification" content="{{ . }}">
-{{ end }}
+#searchModal .modal-content {
+    border-radius: var(--radius-lg);
+    border: none;
+}
 
-<!-- Favicons -->
-<link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon">
-<link rel="apple-touch-icon" href="{{ "img/apple-touch-icon.png" | relURL }}">
+#searchResults {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.search-result-item {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+    background-color: var(--background);
+}
+
+#showMoreResults {
+    padding: 1rem;
+}
+</style>
+{{ end }}

@@ -8,8 +8,8 @@ canonifyURLs = true
 # Parámetros Principales
 [params]
    style = "default"
-   logo = "images/logo.png"
-   logo_small = "images/logo-small.png"
+   logo = "img/logo.png"
+   logo_small = "img/logo-small.png"
    custom_css = ["css/custom.css"]
    mainColor = "#0d3b66"
    backgroundColor = "#f5f5f7"
@@ -20,39 +20,30 @@ canonifyURLs = true
    carousel_enable = true
    js = ["jquery","bootstrap","owl.carousel","front"]
 
-   # Carousel (mantenido igual)
    [params.CarouselHomepage]
        enable = true
        auto_play = true
        slide_speed = 2000
        pagination_speed = 1000
        
-   # Home Sections (nuevas, después del carousel)
-   [params.home]
-       [params.home.popular_destinations]
-           enable = true
-           items = 4
-       [params.home.latest_experiences]
-           enable = true
-           items = 3
-       [params.home.featured_tips]
-           enable = true
-           items = 3
-
-   # Buscador Modal (nuevo)
-   [params.search]
+   [params.features]
        enable = true
-       modal = true
-       live_results = true
-       max_results = 5
+   
+   [params.see_more]
+       enable = true
+       
+   [params.recent_posts]
+       enable = true
+       title = "Recent Posts"
+       subtitle = "Check our latest posts"
 
-   # Widgets existentes
    [params.widgets]
        enable = true
        search = true
        categories = true
        tags = true
 
+   # Selector de idioma
    [params.language_chooser]
        enable = true
        show_flags = true
@@ -66,11 +57,8 @@ canonifyURLs = true
        title = "Bold Explorers"
        languageName = "English"
        
-       [languages.en.params]
-           mainSections = ["blog", "destinations", "guides", "itineraries", "tips"]
-           description = "Family Travel Adventures"
-           search_placeholder = "Search destinations, guides and tips..."
-           show_more = "Show more results"
+    [languages.en.params]
+        mainSections = ["blog", "destinations", "guides", "itineraries", "tips"]
 
        [languages.en.permalinks]
            blog = "/blog/:sections[1:]/:slug/"
@@ -78,29 +66,22 @@ canonifyURLs = true
            guides = "/guides/:slug/"
            itineraries = "/itineraries/:slug/"
            tips = "/tips/:slug/"
-
-       # Menú EN actualizado
-       [[languages.en.menu.main]]
-           identifier = "blog"
-           name = "Blog"
-           url = "/blog/"
-           weight = 1
-       [[languages.en.menu.main]]
-           identifier = "destinations"
-           name = "Destinations"
-           url = "/destinations/"
-           weight = 2
-       [[languages.en.menu.main]]
-           identifier = "tips"
-           name = "Tips"
-           url = "/tips/"
-           weight = 3
-       [[languages.en.menu.main]]
-           identifier = "search"
-           name = "Search"
-           url = "#"
-           weight = 4
-           pre = "<i class='fas fa-search'></i>"
+       
+    [[languages.en.menu.main]]
+          identifier = "blog"
+          name = "Blog"
+          url = "/blog/"
+          weight = 1
+    [[languages.en.menu.main]]
+          identifier = "destinations"
+          name = "Destinations"
+          url = "/destinations/"
+          weight = 2
+    [[languages.en.menu.main]]
+          identifier = "tips"
+          name = "Travel Tips"
+          url = "/tips/"
+          weight = 3
 
    [languages.es]
        languageCode = "es"
@@ -110,55 +91,55 @@ canonifyURLs = true
        languageName = "Español"
 
        [languages.es.params]
-           mainSections = ["blog", "destinos", "guias", "itinerarios", "consejos"]
-           description = "Aventuras de Viaje en Familia"
-           search_placeholder = "Buscar destinos, guías y consejos..."
-           show_more = "Ver más resultados"
-
+        mainSections = ["blog", "destinos", "guias", "itinerarios", "consejos"]
+       
        [languages.es.permalinks]
            blog = "/blog/:sections[1:]/:slug/"
            destinos = "/destinos/:sections[1:]/:slug/"
            guias = "/guias/:slug/"
            itinerarios = "/itinerarios/:slug/"
            consejos = "/consejos/:slug/"
-
-       # Menú ES actualizado
+       
        [[languages.es.menu.main]]
            identifier = "blog"
            name = "Blog"
            url = "/blog/"
            weight = 1
        [[languages.es.menu.main]]
-           identifier = "destinos"
-           name = "Destinos"
+          identifier = "destinos"
+          name = "Destinos"
            url = "/destinos/"
-           weight = 2
+          weight = 2
        [[languages.es.menu.main]]
-           identifier = "consejos"
-           name = "Consejos"
-           url = "/consejos/"
-           weight = 3
-       [[languages.es.menu.main]]
-           identifier = "search"
-           name = "Buscar"
-           url = "#"
-           weight = 4
-           pre = "<i class='fas fa-search'></i>"
+          identifier = "consejos"
+          name = "Consejos"
+          url = "/consejos/"
+          weight = 3
 
-# Taxonomías (mantenidas igual)
+# Taxonomías
 [taxonomies]
-   category = "categories"
+   # Tipos de Contenido
+   category = "categories"  # blog, guide, destination, itinerary, tip
+   
+   # Ubicación
    continent = "continents"
    country = "countries"
+   
+   # Características del Viaje
    travel = "travel"
    activity = "activities"
    season = "seasons"
    difficulty = "difficulties"
+   
+   # Planificación
    planning = "planning"
    duration = "duration"
    budget = "budget"
+   
+   # General
    tag = "tags"
 
+# Configuración del renderizado de Markdown
 [markup]
    [markup.goldmark]
        [markup.goldmark.renderer]
@@ -168,12 +149,14 @@ canonifyURLs = true
        style = "monokai"
        tabWidth = 4
 
+# Configuración de Outputs
 [outputs]
-   home = ["HTML", "RSS", "JSON"]  # Añadido JSON para búsqueda
+   home = ["HTML", "RSS"]
    section = ["HTML"]
    taxonomy = ["HTML"]
    term = ["HTML"]
 
+# Privacy Configuration
 [privacy]
    [privacy.disqus]
        disable = true

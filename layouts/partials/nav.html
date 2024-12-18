@@ -4,10 +4,8 @@
             <!-- Header con Logo -->
             <div class="navbar-header">
                 <a class="navbar-brand home" href="{{ .Site.Home.RelPermalink }}">
-                    <!-- Logo responsive -->
-                    <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }} logo" class="hidden-xs hidden-sm">
-                    <img src="{{ .Site.Params.logo_small | relURL }}" alt="{{ .Site.Title }} logo" class="visible-xs visible-sm">
-                    <span class="sr-only">{{ .Site.Title }}</span>
+                    <span class="brand-text">BOLD EXPLORERS</span>
+                    <span class="sr-only">{{ .Site.Title }}</span> 
                 </a>
                 <!-- Botón móvil -->
                 <div class="navbar-buttons">
@@ -24,8 +22,19 @@
                     <!-- Elementos del menú principal -->
                     {{ $currentPage := . }}
                     {{ range .Site.Menus.main }}
+                    {{ if ne .Identifier "search" }} {{/* Excluir el ítem de búsqueda del menú principal */}}
                     <li class="nav-item{{ if $currentPage.HasMenuCurrent "main" . }} active{{ end }}">
                         <a href="{{ .URL | relLangURL }}" class="nav-link">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+
+                    <!-- Botón de búsqueda -->
+                    {{ if .Site.Params.search.enable }}
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" id="searchButton" class="nav-link" aria-label="{{ T "searchTitle" }}">
+                            <i class="fas fa-search"></i>
+                        </a>
                     </li>
                     {{ end }}
 
@@ -36,12 +45,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             {{ if .IsTranslated }}
-                                <!-- Si la página tiene traducciones, mostrarlas -->
                                 {{ range .Translations }}
                                 <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
                                 {{ end }}
                             {{ else }}
-                                <!-- Si no hay traducciones, manejar secciones especiales -->
                                 {{ $currentSection := .Section }}
                                 {{ range .Site.Languages }}
                                     {{ if ne . $.Site.Language }}
